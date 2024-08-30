@@ -1,2 +1,0 @@
-# DevOpsBasics
-some text
