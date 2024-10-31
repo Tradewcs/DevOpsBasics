@@ -1,72 +1,45 @@
-# [Trello board](https://trello.com/b/pMqymgPv/devops-basics)
+# Class chedule
+## General info
+This repository contains a source code of the Class Schedule Project.
 
-# Getting Started with Create React App
+The main goal of the project is designing a website where the university or institute staff will be able to create, store and display their training schedules.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Link to the development version of the site: https://develop-softserve.herokuapp.com/
 
-## Available Scripts
+## Creating a local repository
+In order to create a local copy of the project you need:
+1. Download and install the last version of Git https://git-scm.com/downloads
+2. Open a terminal and go to the directory where you want to clone the files. 
+3. Run the following command. Git automatically creates a folder with the repository name and downloads the files there.
 
-In the project directory, you can run:
+       git clone https://gitlab.com/class_schedule/class_schedule.backend.git
+4. Enter your username and password if GitLab requests.
 
-### `npm start`
+## Database
+1. Download and install the last version of PostgreSQL https://www.postgresql.org/download/
+2. Configure your username, password and connection url in `hibernate.properties` file
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+##Redis
+1. Download and install the last version of Redis  https://redis.io/download
+2. Configure connection url in `cache.properties` file
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Starting backend server using IntelliJ IDEA and Tomcat
+1. Download and install the Ultimate version of IntelliJ IDEA (alternatively you can use a trial or EAP version) https://www.jetbrains.com/idea/download
+2. Download and install Tomcat 9.0.50 https://tomcat.apache.org/download-90.cgi
+3. Start the IDE and open class_schedule.backend project from the folder where you previously download it.
+4. Make sure Tomcat and TomEE Integration is checked (`File –>> Settings –>> Plugins`).
+5. `Run –>> Edit Configurations…`
+6. Clicks `+` icon, select `Tomcat Server –>> Local`
+7. Clicks on “Server” tab, then press `Configure...` button and select the directory with Tomcat server
+8. Clicks on “Deployment” tab, then press `+` icon to select an artifact to deploy, and select `Gradle:com.softserve:class_schedule.war`
+9. Press OK to save the configuration
+10. `Run –>> Run 'Tomcat 9.0.50'` to start the backend server
 
-### `npm test`
+## Starting frontend server using Node.js
+1. Download and install Node.js 14.17.4 LTS version https://nodejs.org/en/
+2. Open a terminal in `/frontend` directory of the downloaded project and run the following command.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+       npm install
+3. After the installation is finished run the following command to start the frontend server
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+       npm start
